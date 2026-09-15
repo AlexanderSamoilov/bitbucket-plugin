@@ -141,7 +141,7 @@ public class BitbucketJobProbe {
                                         workflowMultiBranchProject.scheduleBuild2(
                                                 0,
                                                 new CauseAction(bitBucketPushCause),
-                                                new BitBucketPayload(payload)
+                                                new BitBucketPayload(bitBucketPushCause, payload)
                                         );
                                         acceptedMatchingJobFound.set(true);
                                     } else {

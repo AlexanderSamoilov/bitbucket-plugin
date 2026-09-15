@@ -43,7 +43,7 @@ public class BitbucketMultibranchRunListener extends RunListener<Run<?, ?>> {
         }
 
         LOGGER.log(Level.FINEST, "Attaching Bitbucket payload to run [{0}] from multibranch indexing", run.getExternalizableId());
-        run.addAction(new BitBucketPayload(payload.getPayload()));
+        run.addAction(new BitBucketPayload(cause, payload.getPayload()));
     }
 
     private static final Logger LOGGER = Logger.getLogger(BitbucketMultibranchRunListener.class.getName());
